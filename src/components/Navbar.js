@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 
 export class Navbar extends Component {
     isVisible = () =>{
-        let isGame = new RegExp("/game/")
+        let isGame = new RegExp("/game")
         return (isGame.test(window.location.href)) ?
-            {'visibility':"hidden"} :
-            {'visibility':"visible"}
+            {'display':"none"} :
+            {'display':"block"}
     }
 
     render() {
