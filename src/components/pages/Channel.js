@@ -15,7 +15,7 @@ export class Channel extends Component {
       }
 
       gameChannel = () => {
-          return `${window.location.href}game`
+          return `${window.location.href}/game`
       }
 
     render() {
@@ -27,7 +27,7 @@ export class Channel extends Component {
                         <li key="hangman">Hangman</li>
                     </ul>
                     <h4>Channel Overlay Link</h4>
-                    <a target="_blank" rel="noopener noreferrer" href={this.gameChannel()}>{window.location.href}game</a>
+                    <a target="_blank" rel="noopener noreferrer" href={this.gameChannel()}>{window.location.href}/game</a>
                 </div>
             </div>
         )

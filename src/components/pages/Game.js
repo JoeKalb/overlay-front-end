@@ -14,6 +14,9 @@ export class Game extends Component {
 
         socket.on('triviaStart', (info) => {
             console.log(info)
+            this.setState({
+                gameType: 'Trivia'
+            })
         })
 
         socket.on('triviaQuestion', (info) => {
