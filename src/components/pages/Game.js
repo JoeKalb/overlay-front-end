@@ -6,29 +6,31 @@ export class Game extends Component {
         channel: "thabuttress",
         endpoint: "localhost:8001/thabuttress",
         gameType: "",
-        question:""
+        question:"",
+        category:""
     }
 
     render() {
         const socket = socketIOClient(this.state.endpoint)
 
         socket.on('triviaStart', (info) => {
-            console.log(info)
             this.setState({
                 gameType: 'Trivia'
             })
         })
 
         socket.on('triviaQuestion', (info) => {
-            console.log(info)
+            const { question, category } = info
             this.setState({
-                question: info.question.question
+                question: question,
+                category: category,
+                gameType: 'Trivia'
             })
         })
 
         return (
             <div>
-                <h3>{this.state.gameType}</h3>
+                <h3>{this.state.gameType} {(this.state.category) ? `| ${this.state.category}`: ""}</h3>
                 <p>{this.state.question}</p>
             </div>
         )
