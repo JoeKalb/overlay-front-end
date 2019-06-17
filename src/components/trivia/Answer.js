@@ -5,7 +5,7 @@ export class Answer extends Component {
         return (
             <div>
                 <p>
-                    #{this.props.index}: {this.props.answer}
+                    #{this.props.index} {this.props.answer}
                 </p>
             </div>
         )
